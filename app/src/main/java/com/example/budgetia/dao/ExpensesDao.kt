@@ -1,21 +1,21 @@
 package com.example.budgetia.dao
 
-import androidx.room.Dao
-import androidx.room.Insert
-import androidx.room.OnConflictStrategy
-import androidx.room.Query
+import androidx.lifecycle.LiveData
+import androidx.room.*
 import com.example.budgetia.models.Expenses
 
 @Dao
 interface ExpensesDao{
     ///get expenses
     @Query("SELECT * FROM expenses  ORDER BY created_on DESC")
-    fun getAllexpenses(): List<Expenses>
+    fun getAllexpenses(): LiveData<List<Expenses>>
 
     /// add an expense
     @Insert(onConflict = OnConflictStrategy.IGNORE)
     suspend fun addExpense(expenses: Expenses)
 
-    //
+    //delete Expense
+    @Delete
+    suspend fun deleteExpense(expenses: Expenses)
 
 }
