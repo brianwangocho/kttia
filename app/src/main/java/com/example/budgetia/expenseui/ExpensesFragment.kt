@@ -13,6 +13,7 @@ import com.example.budgetia.R
  */
 class ExpensesFragment : Fragment() {
 
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
