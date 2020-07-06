@@ -1,18 +1,25 @@
 package com.example.budgetia.roomdatabase
 
 import android.content.Context
-import androidx.room.Database
-import androidx.room.Room
-import androidx.room.RoomDatabase
+import androidx.room.*
+import com.example.budgetia.dao.ExpenseTypeDao
+import com.example.budgetia.dao.ExpensesDao
 import com.example.budgetia.dao.UserDao
+import com.example.budgetia.models.ExpenseType
+import com.example.budgetia.models.Expenses
 import com.example.budgetia.models.User
+import com.example.budgetia.util.DateConvertor
 
 //add entities of classes here which will rep the data in the db
-@Database(entities = arrayOf(User::class), version = 1, exportSchema = false)
+@Database(entities = arrayOf(User::class,ExpenseType::class, Expenses::class), version = 1, exportSchema = false)
+@TypeConverters(DateConvertor::class )
 public abstract class MyRoomDatabase:RoomDatabase(){
 
 //    add daos here
     abstract fun userDao():UserDao
+    abstract fun expensesDao():ExpensesDao
+    abstract fun expensetypeDao():ExpenseTypeDao
+
 
 
     companion object {
