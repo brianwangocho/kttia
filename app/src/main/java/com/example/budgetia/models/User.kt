@@ -1,0 +1,19 @@
+package com.example.budgetia.models
+
+import androidx.room.ColumnInfo
+import androidx.room.Entity
+import androidx.room.PrimaryKey
+
+@Entity(tableName = "users")
+data class User(
+    @ColumnInfo(name="email") val email:String,
+    @ColumnInfo(name="phone") val phone:String,
+    @ColumnInfo(name="password") val password:String
+
+){
+    @PrimaryKey(autoGenerate = true)
+    @ColumnInfo(name="id")
+    var id: Long  = 0
+
+    constructor() : this("", "", "")
+}
