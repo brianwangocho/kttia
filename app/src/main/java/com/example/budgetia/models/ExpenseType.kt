@@ -6,8 +6,14 @@ import androidx.room.PrimaryKey
 import java.util.*
 
 @Entity(tableName = "expense_type")
-class ExpenseType (
-    @PrimaryKey(autoGenerate = true) val id: Int,
+data class ExpenseType (
+
     @ColumnInfo(name="bill_type_flag") val bill_type_flag:Int,
-    @ColumnInfo(name="bill_name") val bill_name:Float
-)
+    @ColumnInfo(name="bill_name") val bill_name:String
+){
+    @PrimaryKey(autoGenerate = true)
+    @ColumnInfo(name="id")
+    var id: Long  = 0
+
+    constructor() : this(0, "")
+}
