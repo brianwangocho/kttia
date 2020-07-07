@@ -10,7 +10,7 @@ class ExpenseViewModelFactory(private val expensesRepository: ExpensesRepository
         if(modelClass.isAssignableFrom(ExpenseViewModel::class.java)){
             return ExpenseViewModel(expensesRepository) as  T
         }
-        throw IllegalArgumentException("Unkown ViewModel")
+        throw IllegalArgumentException("Unknown ViewModel")
     }
 
 }
