@@ -1,16 +1,15 @@
 package com.example.budgetia.expenseui
 
+import android.app.Application
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import com.example.budgetia.Repository.ExpensesRepository
 import java.lang.IllegalArgumentException
 
-class ExpenseViewModelFactory(private val expensesRepository: ExpensesRepository):ViewModelProvider.Factory {
+class ExpenseViewModelFactory(private val mApplication: Application):ViewModelProvider.Factory {
     override fun <T : ViewModel?> create(modelClass: Class<T>): T {
-        if(modelClass.isAssignableFrom(ExpenseViewModel::class.java)){
-            return ExpenseViewModel(expensesRepository) as  T
-        }
-        throw IllegalArgumentException("Unknown ViewModel")
+
+        return ExpenseViewModel(mApplication) as T
     }
 
 }

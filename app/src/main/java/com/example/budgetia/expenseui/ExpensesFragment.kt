@@ -19,25 +19,19 @@ class ExpensesFragment : Fragment() {
 
 
     private lateinit var expenseViewModel: ExpenseViewModel
-    private lateinit var factory: ExpenseViewModelFactory
-
-
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-
+//
         val factory = ExpenseViewModelFactory(activity!!.application)
         expenseViewModel =
-            ViewModelProviders.of(this, factory).get(expenseViewModel::class.java)
+            ViewModelProviders.of(this, factory).get(ExpenseViewModel::class.java)
 
 
         val root = inflater.inflate(R.layout.fragment_expenses, container, false)
-
-
-
 
         return root
     }
