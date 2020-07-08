@@ -10,6 +10,7 @@ import android.os.Handler
 import android.view.View
 import androidx.core.app.ActivityOptionsCompat
 import androidx.core.util.Pair
+import com.example.budgetia.loginui.Login
 import kotlinx.android.synthetic.main.activity_main.*
 
 
@@ -42,7 +43,7 @@ class MainActivity : AppCompatActivity() {
                 // Swap without transition
                 startActivity(detailIntent)
             }
-            startActivity(Intent(this,Login::class.java))
+            startActivity(Intent(this, Login::class.java))
 
             // close this activity
             finish()

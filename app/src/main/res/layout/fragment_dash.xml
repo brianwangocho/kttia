@@ -3,9 +3,7 @@
              xmlns:tools="http://schemas.android.com/tools"
              android:layout_width="match_parent"
              android:layout_height="match_parent"
-             android:layout_margin="10dp"
-             xmlns:app="http://schemas.android.com/apk/res-auto"
-             tools:context=".DashFragment">
+             tools:context=".homeui.DashFragment">
 
     <!-- TODO: Update blank fragment layout -->
     <RelativeLayout
@@ -14,134 +12,9 @@
             android:padding="2dp"
     >
 <!--        dashboard view-->
-        <com.google.android.material.card.MaterialCardView
-                android:layout_width="match_parent"
-                android:layout_height="200dp"
-                android:id="@+id/budget_status"
-                app:elevation="8dp"
-               android:layout_marginLeft="6dp"
-                android:layout_marginRight="6dp"
-                app:cardCornerRadius="10dp"
-        >
-            <RelativeLayout android:layout_width="match_parent"
-                            android:layout_height="200dp"
-                          android:padding="8dp"
-                            android:background="@color/colorPrimary"
-            >
-
-                <TextView android:layout_width="wrap_content"
-                          android:layout_height="wrap_content"
-                          android:text="Dashboard"
-                          android:textColor="@color/colorWhite"
-                          android:textSize="30sp"
-                          android:id="@+id/dashboardText"
-                          android:fontFamily="@font/montserrat"
-                />
-                <ImageView
-                        android:layout_width="30dp"
-                        android:layout_height="30dp"
-                        android:src="@drawable/ic_action_thumbs_up"
-                        android:id="@+id/budget_status_image"
-                        android:layout_below="@id/dashboardText"
-
-                        android:layout_marginTop="5dp"
-
-                />
-                <TextView
-                        android:layout_marginTop="5dp"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:id="@+id/budget_status_text"
-                        android:layout_marginLeft="5dp"
-                        android:fontFamily="@font/montserrat"
-                        android:textColor="@color/colorWhite"
-                        android:textSize="20sp"
-                        android:layout_below="@id/dashboardText"
-                        android:layout_toRightOf="@id/budget_status_image"
-                        android:text="you wallet is looking good"
-                />
-
-                <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Spending"
-                        android:fontFamily="@font/montserrat"
-                        android:textColor="@color/colorWhite"
-                        android:layout_below="@id/budget_status_text"
-                />
-            </RelativeLayout>
-        </com.google.android.material.card.MaterialCardView>
-
-<!--        dashboard view-->
 
 
-
-<!--        Monthly expenses    -->
-        <com.google.android.material.card.MaterialCardView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                app:cardElevation="8dp"
-                android:layout_marginLeft="6dp"
-                android:layout_marginRight="6dp"
-                android:layout_marginTop="10dp"
-                app:cardCornerRadius="10dp"
-                android:layout_below="@id/budget_status"
-                >
-
-            <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="100dp"
-                    android:id="@+id/monthly_status"
-                    android:background="@color/colorPrimary"
-            >
-                <!--  todo:add a progress bar           -->
-
-                <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textSize="20sp"
-                        android:text="Monthly Expense Limit"
-                        android:layout_alignParentRight="true"
-                        android:layout_marginRight="6dp"
-                        android:id="@+id/monthly_Expense_Limit"
-                        android:textColor="@color/colorWhite"
-                />
-                <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:id="@+id/amount_spent"
-                        android:fontFamily="@font/montserrat"
-                        android:text="5000 ksh of"
-                        android:textColor="@color/colorWhite"
-                        android:layout_toLeftOf="@id/amount_limit"
-                        android:layout_margin="2dp"
-                        android:layout_below="@id/monthly_Expense_Limit"
-
-                />
-                <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:id="@+id/amount_limit"
-                        android:fontFamily="@font/montserrat"
-                        android:layout_alignParentRight="true"
-                        android:textColor="@color/colorWhite"
-                        android:layout_margin="2dp"
-                        android:layout_below="@id/monthly_Expense_Limit"
-                        android:text="10,000 ksh"
-
-                />
-
-
-            </RelativeLayout>
-
-        </com.google.android.material.card.MaterialCardView>
-
-
-
-<!--        Monthly expenses    -->
-
-
-
+<!-- dash view  -->
 
 
 

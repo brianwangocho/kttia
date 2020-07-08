@@ -1,9 +1,11 @@
-package com.example.budgetia
+package com.example.budgetia.loginui
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import com.example.budgetia.Dashboard
+import com.example.budgetia.R
 import kotlinx.android.synthetic.main.activity_login.*
 
 class Login : AppCompatActivity() {
@@ -24,7 +26,7 @@ class Login : AppCompatActivity() {
 
     fun Login(){
 
-        val intent =  Intent(this,Dashboard::class.java)
+        val intent =  Intent(this, Dashboard::class.java)
         startActivity(intent)
     }
 }

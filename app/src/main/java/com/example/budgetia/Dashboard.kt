@@ -1,10 +1,12 @@
 package com.example.budgetia
 
-import android.content.Context
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.fragment.app.FragmentTransaction
-import com.google.android.material.bottomnavigation.BottomNavigationMenu
+import com.example.budgetia.expenseui.ExpensesFragment
+import com.example.budgetia.profileui.ProfileFragment
+import com.example.budgetia.homeui.DashFragment
+import com.example.budgetia.settingsui.SettingsFragment
 import kotlinx.android.synthetic.main.activity_dashboard.*
 
 class Dashboard : AppCompatActivity() {
