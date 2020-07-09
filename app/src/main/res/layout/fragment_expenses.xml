@@ -4,7 +4,7 @@
              android:layout_width="match_parent"
              android:layout_height="match_parent"
              android:padding="5dp"
-             android:layout_margin="8dp"
+             android:layout_margin="2dp"
              tools:context=".expenseui.ExpensesFragment">
 
     <!-- TODO: Update blank fragment layout -->
@@ -34,37 +34,12 @@
                           android:layout_height="wrap_content"
                           android:orientation="vertical"
                           >
-                <include
-                        layout="@layout/expenses_card"
-
-                />
-                <include
-                        layout="@layout/expenses_card"
-
-                /><include
-                    layout="@layout/expenses_card"
-
-            /><include
-                    layout="@layout/expenses_card"
-
-            /><include
-                    layout="@layout/expenses_card"
-
-            /><include
-                    layout="@layout/expenses_card"
-
-            /><include
-                    layout="@layout/expenses_card"
-
-            />
-                <include
-                        layout="@layout/expenses_card"
-
-                />
-                <include
-                        layout="@layout/expenses_card"
-
-                />
+                <androidx.recyclerview.widget.RecyclerView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:clipToPadding="false"
+                        tools:listitem="@layout/expenses_card"
+                        />
 
             </LinearLayout>
 

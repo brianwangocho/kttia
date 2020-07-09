@@ -27,13 +27,7 @@ class MainActivity : AppCompatActivity() {
 
 
         Handler().postDelayed({
-            // This method will be executed once the timer is over
-            // Start your app main activity
-            // Check if we're running on Android 5.0 or higher
-
             startActivity(Intent(this, Login::class.java))
-
-            // close this activity
             finish()
         }, SPLASH_TIME_OUT)
 

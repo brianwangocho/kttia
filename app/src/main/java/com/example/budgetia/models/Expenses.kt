@@ -12,6 +12,7 @@ import java.util.*
 data class Expenses(
 
     @ColumnInfo(name="type") val type:Int,
+    @ColumnInfo(name="name") val name:String,
     @ColumnInfo(name="amount") val amount:Int,
     @ColumnInfo(name="created_by") val created_by:Int,
     @TypeConverters(DateConvertor::class)
@@ -23,6 +24,6 @@ data class Expenses(
     @ColumnInfo(name="id")
     var id: Long  = 0
 
-    constructor() : this(0, 0, 0,  Date())
+    constructor() : this(0, "",0, 0,  Date())
 
 }
