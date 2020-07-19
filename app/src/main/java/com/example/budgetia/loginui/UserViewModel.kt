@@ -2,6 +2,8 @@ package com.example.budgetia.loginui
 
 import android.app.Application
 import android.util.Log
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
@@ -17,18 +19,14 @@ class UserViewModel(application: Application):ViewModel(){
     val userDao = MyRoomDatabase.getDatabase(application).userDao()
     private var userRepository = UserRepository(userDao)
     private  val TAG = "LoginViewModel"
-    var count:String  =""
+    var loginRespnse=MutableLiveData<Int>()
 
-    fun authenticateUser(email:String,password:String): String {
-
+    fun authenticateUser(email:String,password:String){
 
         viewModelScope.launch {
-            count = userRepository.loginUser(email,password).toString()
-
+            loginRespnse.value=  userRepository.loginUser(email,password).value
 
         }
-        Log.i(TAG,count)
-        return count
 
     }
 

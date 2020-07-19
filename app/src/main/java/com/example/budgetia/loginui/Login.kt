@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
+import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import com.example.budgetia.R
 import com.example.budgetia.roomdatabase.MyRoomDatabase
@@ -30,12 +31,16 @@ class Login : AppCompatActivity() {
 
         val factory =  UserViewModelFactory(application)
         userViewModel = ViewModelProviders.of(this,factory).get(UserViewModel::class.java)
+        userViewModel.loginRespnse.observe(this, Observer { it->
+            Log.d(TAG,"login response is $it")
+
+        })
+
+
 
         loginButton.setOnClickListener {
             if(validateInputs()){
-          val c =  userViewModel.authenticateUser(login_username.toString(),login_password.toString())
-                Log.i(TAG,"COUNT IS  $c")
-
+                userViewModel.authenticateUser(login_username.text.toString(),login_password.text.toString())
 
             }
         }
