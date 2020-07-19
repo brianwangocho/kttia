@@ -1,12 +1,15 @@
 package com.example.budgetia.loginui
 
 
+import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.widget.Toast
 import androidx.lifecycle.ViewModelProviders
 import com.example.budgetia.R
 import com.example.budgetia.roomdatabase.MyRoomDatabase
+import com.google.android.material.snackbar.Snackbar
 import com.google.android.material.textfield.TextInputLayout
 import kotlinx.android.synthetic.main.activity_login.*
 
@@ -30,7 +33,10 @@ class Login : AppCompatActivity() {
 
         loginButton.setOnClickListener {
             if(validateInputs()){
-                userViewModel.loginUser(login_username.text.toString(),login_password.text.toString())
+          val c =  userViewModel.authenticateUser(login_username.toString(),login_password.toString())
+                Log.i(TAG,"COUNT IS  $c")
+
+
             }
         }
 
@@ -47,11 +53,9 @@ class Login : AppCompatActivity() {
         if(password.isNullOrEmpty() ){
             login_password.setError("password cant be empty")
             isValid = false
-
-
         }
         return isValid
-
     }
+
 
 }
