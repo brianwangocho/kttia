@@ -14,7 +14,7 @@ interface UserDao{
     suspend  fun createUser(user: User):Long
 
     @Query("SELECT COUNT(*) FROM users where email= :email and password= :password")
-     fun loginUser(email:String,password:String):LiveData<Int>
+     suspend fun loginUser(email:String,password:String):Int
 
     @Query("DELETE  FROM users where id = :id")
     suspend fun deleteUserAccount(id:Int)

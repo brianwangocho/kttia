@@ -36,11 +36,20 @@ class Login : AppCompatActivity() {
 
         })
 
-
-
         loginButton.setOnClickListener {
             if(validateInputs()){
-                userViewModel.authenticateUser(login_username.text.toString(),login_password.text.toString())
+          var c =  userViewModel.authenticateUser(login_username.text.toString(),login_password.text.toString()).value
+             if(c == 0){
+                 val snackbar = Snackbar.make(
+                     login_layout,
+                     "Invalid credentials.",
+                     Snackbar.LENGTH_LONG
+                 )
+                 // Get the snack bar root view
+                 val snack_root_view = snackbar.view
+                 snack_root_view.setBackgroundColor(Color.BLACK)
+                 snackbar.show()
+             }
 
             }
         }
@@ -52,13 +61,15 @@ class Login : AppCompatActivity() {
         val username = login_username.text.toString()
         val password  = login_password.text.toString()
         if(username.isNullOrEmpty() ){
-            login_username.setError("username cant be empty")
+            login_username_layout.setError("username cant be empty")
            isValid = false
         }
         if(password.isNullOrEmpty() ){
-            login_password.setError("password cant be empty")
+            login_password_layout.setError("password cant be empty")
             isValid = false
         }
+
+
         return isValid
     }
 

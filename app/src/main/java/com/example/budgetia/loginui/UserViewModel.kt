@@ -21,12 +21,13 @@ class UserViewModel(application: Application):ViewModel(){
     private  val TAG = "LoginViewModel"
     var loginRespnse=MutableLiveData<Int>()
 
-    fun authenticateUser(email:String,password:String){
+    fun authenticateUser(email:String,password:String):MutableLiveData<Int>{
 
         viewModelScope.launch {
-            loginRespnse.value=  userRepository.loginUser(email,password).value
+            loginRespnse.value=  userRepository.loginUser(email,password)
 
         }
+        return loginRespnse
 
     }
 
