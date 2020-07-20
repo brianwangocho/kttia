@@ -6,7 +6,6 @@ import androidx.room.PrimaryKey
 
 @Entity(tableName = "users")
 data class User(
-    @ColumnInfo(name="email") val email:String,
     @ColumnInfo(name="phone") val phone:String,
     @ColumnInfo(name="password") val password:String
 
@@ -15,5 +14,5 @@ data class User(
     @ColumnInfo(name="id")
     var id: Long  = 0
 
-    constructor() : this("", "", "")
+    constructor() : this("", "")
 }

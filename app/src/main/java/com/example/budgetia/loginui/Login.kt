@@ -1,6 +1,7 @@
 package com.example.budgetia.loginui
 
 
+import android.content.Intent
 import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -9,6 +10,7 @@ import android.widget.Toast
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import com.example.budgetia.R
+import com.example.budgetia.registerui.RegisterActivity
 import com.example.budgetia.roomdatabase.MyRoomDatabase
 import com.google.android.material.snackbar.Snackbar
 import com.google.android.material.textfield.TextInputLayout
@@ -35,6 +37,7 @@ class Login : AppCompatActivity() {
             Log.d(TAG,"login response is $it")
 
         })
+//        todo find a way to remove erros after validation
 
         loginButton.setOnClickListener {
             if(validateInputs()){
@@ -52,6 +55,12 @@ class Login : AppCompatActivity() {
              }
 
             }
+        }
+
+        //// go to register activity
+        create_new_account.setOnClickListener {
+            val intent = Intent(this,RegisterActivity::class.java)
+            startActivity(intent)
         }
 
     }
